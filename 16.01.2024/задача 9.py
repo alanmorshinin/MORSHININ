@@ -1,0 +1,5 @@
+number = input("Введите трехзначное число: ")
+sum1 = int(number[0]) + int(number[1])
+sum2 = int(number[1]) + int(number[2])
+new_number = str(min(sum1, sum2)) + str(max(sum1, sum2))
+print("Искомое число:", new_number)
