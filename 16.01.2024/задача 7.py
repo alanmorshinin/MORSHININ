@@ -1,9 +1,9 @@
-hours = int(input("Введите отработанные часы: "))
-clothes_expenses = int(input("Введите траты на одежду: "))
-food_expenses = int(input("Введите траты на еду: "))
-salary = (250 * hours) / 2 ** 3 + hours
-total_expenses = clothes_expenses + food_expenses
-if salary >= total_expenses:
+a = int(input("Введите отработанные часы: "))
+b = int(input("Введите траты на одежду: "))
+c = int(input("Введите траты на еду: "))
+salary = (250 * a) / 2 ** 3 + a
+d = b + c
+if salary >= d:
     print("Часов хватает. Можно отдохнуть")
 else:
     print("Часов не хватает. Придётся работать больше!")
