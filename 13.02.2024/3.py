@@ -1,11 +1,12 @@
-def alan(n):
-    summ = 0
-    while n:
-        summ += n % 10
-        n //= 10
-    return summ
- 
-a = int(input('Введите первое число: '))
-b = int(input('Введите второе число: '))
- 
-print(('b больше', 'a больше')[alan(a) > alan(b)])
+def is_perfect_number(num):
+    sum_divisors = 0
+    for i in range(1, num):
+        if num % i == 0:
+            sum_divisors += i
+    return sum_divisors == num
+
+num = int(input("Введите натуральное число: "))
+if is_perfect_number(num):
+    print(f"Число {num} совершенное.")
+else:
+    print(f"Число {num} не совершенное.")
