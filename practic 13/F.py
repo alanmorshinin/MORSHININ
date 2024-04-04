@@ -1,12 +1,26 @@
-from random import randint
-n = int(input('Введите кол-во элементов:\n'))
-a = [randint(2, 100) for _ in range(n)]
-print(f'Массив:\n{" ".join(str(i) for i in a)}')
-s1 = sum(i for i in a if i < 170)
-count1 = sum(1 for i in a if i < 170)
-s2 = sum(i for i in a if i >= 170)
-count2 = sum(1 for i in a if i >= 170)
-sr1 = None if count1 == 0 else s1 / count1
-sr2 = None if count2 == 0 else s2 / count2
-print(f'среднее арфиметическое элементов [0,170]: {sr1}')
-print(f'среднее арфиметическое элементов [170,230]: {sr2}')
+def c(h):
+    n = sum(i > 170 for i in h)
+    return n
+
+def b(n):
+    return n >= 5
+
+def m():
+    s = int(input("Введите количество учеников: "))
+    h = []
+    for i in range(s):
+        ht = int(input(f"Введите рост ученика {i+1} в см: "))
+        h.append(ht)
+
+    nt = c(h)
+    t = b(nt)
+
+    print(f"Из {s} учеников, {nt} имеют рост больше 170 см.")
+
+    if t:
+        print("Можно сформировать команду.")
+    else:
+        print("Нельзя сформировать команду, так как учеников с ростом выше 170 см не хватает.")
+
+if __name__ == "__main__":
+    m()
