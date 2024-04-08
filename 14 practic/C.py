@@ -1,17 +1,13 @@
-from random import randint
+import random
 
-n = int(input('Введите количество элементов: '))
-A = [randint(0, 5) for _ in range(n)]
-print(f'Массив:\n {"".join(str(i) for i in A)} ')
-S = []
-for i in range(n - 1):
-    if A[i] == A[i + 1]:
-        if (A[i] in S):
-            S.append(A[i])
+arr = [random.randint(0, 10) for _ in range(10)]
 
-if len(str(S)) < len(S):
-    print('Есть', ",".join(str(i) for i in S))
+seen = set()
+duplicates = set(x for x in arr if x in seen or seen.add(x))
+
+if duplicates:
+    print('Массив:', arr)
+    print('Есть:', duplicates)
 else:
-    print('Нет')
-
-
+    print('Массив:', arr)
+    print('Нет повторяющихся элементов')
